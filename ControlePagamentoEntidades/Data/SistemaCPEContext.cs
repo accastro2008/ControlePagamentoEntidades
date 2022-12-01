@@ -7,10 +7,9 @@ namespace ControlePagamentoEntidades.Data
     {
         public SistemaCPEContext(DbContextOptions<SistemaCPEContext> options) : base(options) { }
 
-        public DbSet<EntidadeModel> Endidades { get; set; }
-
-
-
+        public DbSet<EntidadeModel> Entidades { get; set; }
+        public DbSet<ProcessoModel> Processos { get; set; }
+        public DbSet<PagamentoModel> Pagamentos { get; set; }
 
     }
 

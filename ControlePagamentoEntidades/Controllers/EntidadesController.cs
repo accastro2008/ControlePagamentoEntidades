@@ -10,30 +10,30 @@ using ControlePagamentoEntidades.Models;
 
 namespace ControlePagamentoEntidades.Controllers
 {
-    public class EntidadeController : Controller
+    public class EntidadesController : Controller
     {
         private readonly SistemaCPEContext _context;
 
-        public EntidadeController(SistemaCPEContext context)
+        public EntidadesController(SistemaCPEContext context)
         {
             _context = context;
         }
 
-        // GET: Entidade
+        // GET: Entidades
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Endidades.ToListAsync());
+              return View(await _context.Entidades.ToListAsync());
         }
 
-        // GET: Entidade/Details/5
+        // GET: Entidades/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Endidades == null)
+            if (id == null || _context.Entidades == null)
             {
                 return NotFound();
             }
 
-            var entidadeModel = await _context.Endidades
+            var entidadeModel = await _context.Entidades
                 .FirstOrDefaultAsync(m => m.EntidadeID == id);
             if (entidadeModel == null)
             {
@@ -43,13 +43,13 @@ namespace ControlePagamentoEntidades.Controllers
             return View(entidadeModel);
         }
 
-        // GET: Entidade/Create
+        // GET: Entidades/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Entidade/Create
+        // POST: Entidades/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,15 +65,15 @@ namespace ControlePagamentoEntidades.Controllers
             return View(entidadeModel);
         }
 
-        // GET: Entidade/Edit/5
+        // GET: Entidades/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Endidades == null)
+            if (id == null || _context.Entidades == null)
             {
                 return NotFound();
             }
 
-            var entidadeModel = await _context.Endidades.FindAsync(id);
+            var entidadeModel = await _context.Entidades.FindAsync(id);
             if (entidadeModel == null)
             {
                 return NotFound();
@@ -81,7 +81,7 @@ namespace ControlePagamentoEntidades.Controllers
             return View(entidadeModel);
         }
 
-        // POST: Entidade/Edit/5
+        // POST: Entidades/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,15 +116,15 @@ namespace ControlePagamentoEntidades.Controllers
             return View(entidadeModel);
         }
 
-        // GET: Entidade/Delete/5
+        // GET: Entidades/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Endidades == null)
+            if (id == null || _context.Entidades == null)
             {
                 return NotFound();
             }
 
-            var entidadeModel = await _context.Endidades
+            var entidadeModel = await _context.Entidades
                 .FirstOrDefaultAsync(m => m.EntidadeID == id);
             if (entidadeModel == null)
             {
@@ -134,19 +134,19 @@ namespace ControlePagamentoEntidades.Controllers
             return View(entidadeModel);
         }
 
-        // POST: Entidade/Delete/5
+        // POST: Entidades/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Endidades == null)
+            if (_context.Entidades == null)
             {
-                return Problem("Entity set 'SistemaCPEContext.Endidades'  is null.");
+                return Problem("Entity set 'SistemaCPEContext.Entidades'  is null.");
             }
-            var entidadeModel = await _context.Endidades.FindAsync(id);
+            var entidadeModel = await _context.Entidades.FindAsync(id);
             if (entidadeModel != null)
             {
-                _context.Endidades.Remove(entidadeModel);
+                _context.Entidades.Remove(entidadeModel);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace ControlePagamentoEntidades.Controllers
 
         private bool EntidadeModelExists(int id)
         {
-          return _context.Endidades.Any(e => e.EntidadeID == id);
+          return _context.Entidades.Any(e => e.EntidadeID == id);
         }
     }
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ControlePagamentoEntidades.Models.PagamentoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PagamentoSeq)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagamentoData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagamentoValor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagamentoSeq)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagamentoData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagamentoValor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PagamentoID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PagamentoID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PagamentoID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

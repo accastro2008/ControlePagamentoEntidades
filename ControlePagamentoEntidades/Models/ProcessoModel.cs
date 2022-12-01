@@ -14,6 +14,9 @@ namespace ControlePagamentoEntidades.Models
 
         [Required(ErrorMessage = "Teste")]
         public double ProcessoValorTotal { get; set; }
+        
+        [Required(ErrorMessage = "Teste")]
+        public string ProcessoSituacao { get; set; }
 
         public EntidadeModel EntidadeModel { get; set; }
 

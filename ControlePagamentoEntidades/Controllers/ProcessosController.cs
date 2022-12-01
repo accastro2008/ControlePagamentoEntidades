@@ -54,7 +54,7 @@ namespace ControlePagamentoEntidades.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProcessoID,ProcessoNumero,ProcessoValorTotal")] ProcessoModel processoModel)
+        public async Task<IActionResult> Create([Bind("ProcessoID,ProcessoNumero,ProcessoValorTotal,ProcessoSituacao")] ProcessoModel processoModel)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ControlePagamentoEntidades.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProcessoID,ProcessoNumero,ProcessoValorTotal")] ProcessoModel processoModel)
+        public async Task<IActionResult> Edit(int id, [Bind("ProcessoID,ProcessoNumero,ProcessoValorTotal,ProcessoSituacao")] ProcessoModel processoModel)
         {
             if (id != processoModel.ProcessoID)
             {
